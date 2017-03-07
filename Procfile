@@ -1,1 +1,1 @@
-web: ./build/heroku-spark/bin/heroku-spark
+web: ./build/install/heroku-spark/bin/heroku-spark

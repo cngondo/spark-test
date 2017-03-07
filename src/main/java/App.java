@@ -3,25 +3,35 @@
  */
 
 import static spark.Spark.*;
+import java.util.HashMap;
+
+import spark.ModelAndView;
+import spark.template.velocity.VelocityTemplateEngine;
 
 public class App {
    
     public static void main(String[] args) {
         // System.out.println(new App().getGreeting());
     	//simple hello world from spark
-        get("/hello", (req, res) -> "Hello from heroku!!");
+        staticFileLocation("/public");
+        get("/", (request, response) -> {
+          return new ModelAndView(new HashMap(), "templates/hello.vtl");
+        }, new VelocityTemplateEngine());
 
         get("/", (req, res) -> "Welcome to Heroku in spark");
         
+
+	    setPort(getHerokuPort());
+    }
+
+    static int getHerokuPort(){
         ProcessBuilder process = new ProcessBuilder();
         Integer port;
 
         if (process.environment().get("PORT") != null) {
-	         port = Integer.parseInt(process.environment().get("PORT"));
-	     } else {
-	         port = 4567;
-	     }
-
-	    setPort(port);
+            return port = Integer.parseInt(process.environment().get("PORT"));
+         } else {
+            return port = 4567;
+         }
     }
 }
