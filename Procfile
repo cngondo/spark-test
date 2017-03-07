@@ -1,0 +1,1 @@
+web: ./build/install/spark-test/bin/spark-test
