@@ -15,4 +15,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'test-heroku'
+rootProject.name = 'heroku-spark'
