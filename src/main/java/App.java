@@ -9,8 +9,9 @@ public class App {
     public static void main(String[] args) {
         // System.out.println(new App().getGreeting());
     	//simple hello world from spark
-        get("/hello", (req, res) -> "Hello World");
+        get("/hello", (req, res) -> "Hello from heroku!!");
 
+        get("/", (req, res) -> "Welcome to Heroku in spark");
         
         ProcessBuilder process = new ProcessBuilder();
         Integer port;
