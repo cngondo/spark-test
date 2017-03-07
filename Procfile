@@ -1,1 +1,1 @@
-web: gradle run
+web: ./build/install/heroku-spark/bin/heroku-spark
