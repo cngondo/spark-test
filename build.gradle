@@ -40,5 +40,4 @@ dependencies {
 }
 //removes unnecessary build files
 defaultTasks= ['clean']
-task stage(dependsOn: ['clean', 'installApp'])
-build.mustRunAfter clean
+task stage(dependsOn: ['build', 'clean'])
