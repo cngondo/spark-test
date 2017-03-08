@@ -40,4 +40,4 @@ dependencies {
 }
 //removes unnecessary build files
 defaultTasks= ['clean']
-task stage(dependsOn: ['clean', 'build'])
+task stage(dependsOn: ['clean', 'installDist'])
