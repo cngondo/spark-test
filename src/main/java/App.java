@@ -13,15 +13,13 @@ public class App {
     public static void main(String[] args) {
         // System.out.println(new App().getGreeting());
     	//simple hello world from spark
+        setPort(getHerokuPort());
         staticFileLocation("/public");
         get("/", (request, response) -> {
           return new ModelAndView(new HashMap(), "templates/hello.vtl");
         }, new VelocityTemplateEngine());
 
-        get("/", (req, res) -> "Welcome to Heroku in spark");
-        
-
-	    setPort(getHerokuPort());
+        get("/", (req, res) -> "Welcome to Heroku in spark");   
     }
 
     static int getHerokuPort(){
